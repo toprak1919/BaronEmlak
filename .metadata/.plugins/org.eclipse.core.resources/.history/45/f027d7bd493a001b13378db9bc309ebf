@@ -1,0 +1,57 @@
+<!-- 
+ this is a partial page
+ purpose is to show the "Add Recipe" form
+ even though the file extension is .php, all of the code is html.
+ -->
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Eventually by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Ekleme paneline hoş geldin</h1>
+				
+			</header>
+
+		<!-- Signup Form -->
+			<div class="form-container">
+<h2>Emlak ekle</h2>
+<p>Doldur ve Add tuşuna bas</p>
+<form id="signup-form" action="processAddItem.php">
+    Emlak tipi:<input list="emlaklar" name="recipeTitle"><datalist id="emlaklar"><option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+    </datalist>
+    </form>
+    Bölge:<input type="text" name="recipeIngredients"></input>
+    
+    Yer:<input type="text" name="recipeInstructions"></input>
+    <button type="submit">Add</button>
+</form>
+</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</footer>
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+

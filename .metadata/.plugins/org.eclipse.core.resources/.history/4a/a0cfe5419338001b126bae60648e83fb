@@ -1,0 +1,11 @@
+<html>
+<head>
+</head>
+<body>
+<form action="processs.php">
+Name: <input type="text" name="nameInput">
+<button type="submit">submit</button>
+ 
+</form>
+</body>
+</html>

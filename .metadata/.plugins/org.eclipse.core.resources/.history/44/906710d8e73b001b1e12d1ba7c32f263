@@ -1,0 +1,76 @@
+<!-- 
+ this is a partial page
+ purpose is to show a search form under the top menu
+ even though the file extension is .php, all of the code on this page is html
+ -->
+ <script>
+var TipObject = {
+  "Arazi": {
+    "Lefkoşa": ["Links", "Images", "Tables", "Lists"],
+    "Girne": ["Borders", "Margins", "Backgrounds", "Float"],
+    "Mağusa": ["Variables", "Operators", "Functions", "Conditions"]    
+    "Güzelyurt":[]
+    "İskele":[]
+    "Lefke":[]
+  },
+  "Konut": {
+    "PHP": ["Variables", "Strings", "Arrays"],
+    "SQL": ["SELECT", "UPDATE", "DELETE"]
+  }
+}
+window.onload = function() {
+  var TipSel = document.getElementById("Tip");
+  var ŞehirSel = document.getElementById("Şehir");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in TipObject) {
+    TipSel.options[TipSel.options.length] = new Option(x, x);
+  }
+  TipSel.onchange = function() {
+    //empty Chapters- and Şehirs- dropdowns
+    chapterSel.length = 1;
+    ŞehirSel.length = 1;
+    //display correct values
+    for (var y in TipObject[this.value]) {
+      ŞehirSel.options[ŞehirSel.options.length] = new Option(y, y);
+    }
+  }
+  ŞehirSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = TipObject[TipSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+ <div class="form-container">
+<form name="form1" id="form1" action="/action_page.php">
+Emlak: <select name="Tip" id="Tip">
+    <option value="" Bölge="Bölge">Select Tip</option>
+  </select>
+  <br><br>
+Şehir: <select name="Şehir" id="Şehir">
+    <option value="" Bölge="Bölge">Please select Tip first</option>
+  </select>
+  <br><br>
+Bölge: <select name="chapter" id="chapter">
+    <option value="" Bölge="Bölge">Please select Şehir first</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">  
+</form>
+
+
+
+<h2>Emlak Ara</h2>
+<p>Kapsamlı bir aramayla istediğiniz çeşit emlağı kolaylıkla bulun!</p>
+<form action="searchrecipe.php">
+Emlak tipi:<input type="text" name="Tip"></input><br>
+Şehir:<input type="text" name="Şehir"></input><br>
+Bölge:<input type="text" name="Bölge"></input><br>
+<button type="submit">Ara</button>
+</form>
+</div>
+

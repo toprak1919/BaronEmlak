@@ -1,0 +1,11 @@
+<?php
+require_once 'connection.php';
+$statementu="SELECT * FROM `user_table` WHERE `user_name` LIKE 'Okay'";
+if ($result=$connection->query($statementu) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $statementu . "<br>" . $conn->error;
+}
+
+
+?>

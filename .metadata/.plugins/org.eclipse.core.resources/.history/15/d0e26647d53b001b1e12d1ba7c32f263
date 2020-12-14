@@ -1,0 +1,12 @@
+
+
+
+
+<h2>Emlak Ara</h2>
+<p>Kapsamlı bir aramayla istediğiniz çeşit emlağı kolaylıkla bulun!</p>
+<form action="searchrecipe.php">
+Emlak tipi:<input type="text" name="Tip"></input><br>
+Şehir:<input type="text" name="Şehir"></input><br>
+Bölge:<input type="text" name="Bölge"></input><br>
+<button type="submit">Ekle</button>
+</form>

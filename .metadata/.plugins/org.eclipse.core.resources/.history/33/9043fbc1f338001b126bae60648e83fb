@@ -1,0 +1,54 @@
+<?php
+
+$personName=$_GET["nameInput"];
+$pswd2 = $_GET["pswd"];
+$file = $_FILES['file'];
+$fileName = $_FILES['file']['name'];
+$fileTmpName = $_FILES['file']['tmp_name'];
+$fileSize = $_FILES['file']['size'];
+$fileError = $_FILES['file']['error'];
+$fileType = $_FILES['file']['type'];
+$fileExt = explode('.', $fileName);
+$fileActualExt = strtolower(end($fileExt));
+$allowed = array('jpg','jpeg','png','pdf');
+
+if(in_array($fileActualExt, $allowed)){
+    if ($fileError===0) {
+        if ($fileSize<1000000) {
+            $fileNameNew = uniqid('',true).".".$fileActualExt;
+            $fileDestination = 'images/'.$fileNameNew;
+            move_uploaded_file($fileTmpName, $fileDestination);
+            header("Location:index.php?uploadsuccess");
+            echo "omegalul";
+        }else{
+            echo "your file is too big";
+        }
+    }
+}
+else{
+    echo "You cannot upload this type of file";
+}
+
+
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$database_name ="form_demo";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,$database_name);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+$sql = "INSERT INTO `mytable` (`id`, `name`, `password`, `image`) VALUES (NULL, '$personName', '$password', 'wqro')";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
+?>

@@ -1,0 +1,15 @@
+<html>
+<head>
+</head>
+<body>
+<form action="processs.php" method="POST" enctype="multipart/form-data">
+Name: <input type="text" name="nameInput">
+Password : <input type="password" name= "pswd">
+</form>
+<form action="processs.php" method="POST" enctype="multipart/form-data">
+file : <input  type="file" name="file">
+<button type="submit" name='submit'>submit</button>
+ </form>
+
+</body>
+</html>

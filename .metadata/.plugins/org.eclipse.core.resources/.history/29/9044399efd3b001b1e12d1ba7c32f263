@@ -1,0 +1,34 @@
+<?php
+
+
+
+if (isset($_POST['upload'])){
+    $target ="images/".basename($_FILES['image']['name']);
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $database_name ="form_demo";
+    
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password,$database_name);
+    
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    $image = $_FILES['image']['name'];
+    $text = $_POST['text'];
+    $sql = "INSERT INTO `mytable` (`id`, `image`, `text`) VALUES (NULL, '$image', '$text');";
+    mysqli_query($db, $sql);
+    if(move_uploaded_file($_FILES['tmp_name']['name'], $target)){
+        $msg = 'image uploaded succ';
+        
+    }
+    else {
+        $msg= 'image fail';
+    }
+    }
+}
+
+
+
+?>

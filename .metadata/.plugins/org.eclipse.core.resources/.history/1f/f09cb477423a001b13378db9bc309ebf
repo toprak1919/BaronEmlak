@@ -1,0 +1,50 @@
+<!-- 
+ this is a partial page
+ purpose is to show the "Add Recipe" form
+ even though the file extension is .php, all of the code is html.
+ -->
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Eventually by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Admin paneline hoş geldin</h1>
+				
+			</header>
+
+		<!-- Signup Form -->
+			<div class="form-container">
+<h2>Add a recipe</h2>
+<p>Fill out all of the fields and submit</p>
+<form id="signup-form" action="processAddItem.php">
+    Recipe Title:<input type="text" name="recipeTitle"></input><br>
+    Recipe Ingredients:<input type="text" name="recipeIngredients"></input><br>
+    Recipe Instructions:<input type="text" name="recipeInstructions"></input><br>
+    <button type="submit">Add</button>
+</form>
+</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</footer>
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+

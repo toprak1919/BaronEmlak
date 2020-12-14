@@ -1,0 +1,54 @@
+<?php
+$personName=$_GET["nameInput"];
+$pswd2 = $_GET["pswd"];
+
+if ($pswd2 =="123") {
+    echo "Hello ".$personName;
+}
+
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$database_name ="form_demo";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,$database_name);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+$sql = "INSERT INTO `mytable` (`id`, `name`, `password`) VALUES (NULL, '$personName', '$pswd2')";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// Initialize message variable
+$msg = "";
+
+// If upload button is clicked ...
+if (isset($_POST['upload'])) {
+    // Get image name
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($sql, $_POST['image_text']);
+    
+    // image file directory
+    $target = "images/".basename($image);
+    
+    $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    mysqli_query($sql, $sql);
+    
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+    }else{
+        $msg = "Failed to upload image";
+    }
+}
+$result = mysqli_query($sql, "SELECT * FROM images");
+?>
+?>

@@ -1,0 +1,17 @@
+<?php
+require_once 'connection.php';
+$statementu="SELECT * FROM `emlaklist` WHERE `Location` LIKE 'Girne'";
+if ($result=mysqli_query($connection,$statementu)) {
+    while($row=mysqli_fetch_assoc($result))
+    {
+        
+        echo "The person name is" . $row['Type'] . "<br>";
+        echo "The person name is" . $row['Location'] . "<br>";
+        echo "The person name is" . $row['Area'] . "<br>";
+    }
+} else {
+    echo "Error: " . $statementu . "<br>" . $connection->error;
+}
+
+
+?>

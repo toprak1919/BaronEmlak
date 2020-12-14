@@ -1,0 +1,12 @@
+<html>
+<head>
+</head>
+<body>
+<form action="processs.php">
+Name: <input type="text" name="nameInput">
+Password : <input type="password" name= "pswd">
+<button type="submit">submit</button>
+ 
+</form>
+</body>
+</html>

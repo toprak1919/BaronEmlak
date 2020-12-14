@@ -1,0 +1,16 @@
+<html>
+<head>
+</head>
+<body>
+<form action="processs.php" method="post" enctype="multipart/form-data">
+<div>
+Name: <input type="text" name="text">
+</div>
+<div>
+file : <input type="file" name="image">
+</div>
+<button type="submit" name='submit'>submit</button>
+ 
+</form>
+</body>
+</html>

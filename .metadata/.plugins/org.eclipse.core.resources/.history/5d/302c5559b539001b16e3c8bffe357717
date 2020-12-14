@@ -1,0 +1,11 @@
+<?php
+require_once 'connection.php';
+$statementu="INSERT INTO `user_table` (`id`, `user_name`, `user_password`) VALUES (NULL, 'Okay', '12345')";
+if ($result=$connection->query($statementu) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $statementu . "<br>" . $conn->error;
+}
+
+
+?>

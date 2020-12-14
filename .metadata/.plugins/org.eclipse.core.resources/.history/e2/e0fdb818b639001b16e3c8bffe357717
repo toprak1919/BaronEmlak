@@ -1,0 +1,16 @@
+<?php
+require_once 'connection.php';
+$statementu="SELECT * FROM `user_table` WHERE `user_name` LIKE 'Okay'";
+if ($result=$connection->query($statementu) === TRUE) {
+    while($row=mysqli_fetch_assoc($result))
+    {
+        echo "The person name is" . $row['id'] . "<br>";
+        echo "The person name is" . $row['user_name'] . "<br>";
+        echo "The person name is" . $row['user_password'] . "<br>";
+    }
+} else {
+    echo "Error: " . $statementu . "<br>" . $connection->error;
+}
+
+
+?>
